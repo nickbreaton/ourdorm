@@ -33,6 +33,24 @@ language.
 
 ## Development
 
+### Getting Started
+
+1. Install all dependencies as listed in the __Dependencies__ section of this document, and install all code dependencies with npm:
+
+  ```sh
+  npm install
+  ```
+
+  __Note:__ This project also uses [Composer]('https://getcomposer.com/') to install PHP dependencies, however, npm installs Composer via the [getcomposer](https://www.npmjs.com/package/getcomposer) npm package, and runs `composer install` as part of the `postinstall` npm script.
+
+2. Be sure to create all credential files as listed in the __Credentials__ section of this document.
+
+2. Start the PHP development server by running:
+
+  ```sh
+  gulp
+  ```
+
 ### Dependencies
 
 - [PHP](http://php.net/)
