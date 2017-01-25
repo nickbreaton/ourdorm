@@ -5,7 +5,7 @@ const path = require('path');
 const zip = require('gulp-zip');
 
 gulp.task('default', function () {
-  spawn('php', ['-S', 'localhost:8080', '-t', 'www'], {
+  spawn('php', ['-S', 'localhost:8080', '-t', 'public'], {
     stdio: 'inherit'
   });
 });
