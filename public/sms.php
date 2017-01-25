@@ -1,6 +1,4 @@
 <?php
-require '../vendor/autoload.php';
-
 $worker = new IronWorker\IronWorker('../iron.json');
 
 $payload = array('name' => 'nick');
