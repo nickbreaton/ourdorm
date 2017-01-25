@@ -1,6 +1,6 @@
 # uncc-reminders
 
-### Dependecies
+### Dependencies
 
 - [PHP](http://php.net/)
 - [NodeJS](https://nodejs.org/)
