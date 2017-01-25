@@ -1,8 +1,8 @@
-THIS APPLICATION IS A WORK IN PROGRESS AND SHOULD NOT BE USED IN A PRODUCTION ENVIRONMENT.
+THIS APPLICATION IS A __WORK IN PROGRESS__ AND SHOULD __NOT__ BE USED IN A PRODUCTION ENVIRONMENT.
 
 # uncc-reminders
 
-Never miss a Canvas assignment again.
+Never miss a Canvas assignment.
 
 This application integrates with [Canvas by Instrcture](https://canvas.instructure.com/) and will send you a text message at a specified time before an incomplete assignment is due.
 
