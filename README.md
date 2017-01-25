@@ -47,7 +47,7 @@ language.
   npm install
   ```
 
-  __Note:__ This project also uses [Composer]('https://getcomposer.com/') to install PHP dependencies, however, npm installs Composer via the [getcomposer](https://www.npmjs.com/package/getcomposer) npm package, and runs `composer install` as part of the `postinstall` npm script.
+  __Note:__ This project also uses [Composer](https://getcomposer.com/) to install PHP dependencies, however, npm installs Composer via the [getcomposer](https://www.npmjs.com/package/getcomposer) npm package, and runs `composer install` as part of the `postinstall` npm script.
 
 2. Be sure to create all credential files as listed in the __Credentials__ section of this document.
 
