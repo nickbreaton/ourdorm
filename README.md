@@ -1,4 +1,10 @@
+THIS APPLICATION IS A WORK IN PROGRESS AND SHOULD NOT BE USED IN A PRODUCTION ENVIRONMENT.
+
 # uncc-reminders
+
+Never miss a Canvas assignment again.
+
+This application integrates with [Canvas by Instrcture](https://canvas.instructure.com/) and will send you a text message at a specified time before an incomplete assignment is due.
 
 ## Technical Requirements
 
@@ -71,7 +77,7 @@ Stored in `iron.json`:
 }
 ```
 
-#### [Canvas by Instructure]('https://uncc.instructure.com/')
+#### [Canvas by Instructure]('https://canvas.instructure.com/')
 
 TEMPORARY: Stored in `canvas.json`:
 
