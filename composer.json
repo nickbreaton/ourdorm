@@ -1,7 +1,0 @@
-{
-  "require": {
-    "php": "^5.3.3 || ^7.0",
-    "iron-io/iron_worker": "2.*",
-    "guzzlehttp/guzzle": "^6.2"
-  }
-}
