@@ -1,9 +1,1 @@
-canvas.json
-composer.lock
-dist
-iron.json
-node_modules
-npm-debug.log
-vendor
-yarn-error.log
-yarn.lock
+requirements
