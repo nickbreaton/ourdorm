@@ -11,6 +11,7 @@ marked.setOptions({
 marked(PROPOSAL, (err, content) => {
   main.style.maxWidth = '800px';
   main.style.margin = 'auto';
+  main.style.marginBottom = '50px';
   main.className = 'markdown-body';
   main.innerHTML = content;
 });
