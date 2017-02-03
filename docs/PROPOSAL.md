@@ -20,6 +20,8 @@ A central piece of the Resident Advisor Dashboard, will be a calendar-like inter
 
 - __Event List__
 
+<div style="page-break-after: always"></div>
+
 ## Users and Stakeholders
 
 ### RAs
