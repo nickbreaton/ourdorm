@@ -1,5 +1,7 @@
+import Calendar from './components/Calendar';
+
 export default () => (
-  <h1>
-    Hello world
-  </h1>
+  <div>
+    <Calendar/>
+  </div>
 );
