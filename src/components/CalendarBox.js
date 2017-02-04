@@ -12,18 +12,9 @@ export default styled.div`
   &:not(:last-child) {
     border-right: none;
   }
-  &::before {
+  &::after {
     padding-top: 100%;
     content: '';
     display: block;
-  }
-  &::after {
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
-    font-family: 'Arial';
-    font-weight: bold;
-    color: rgba(0,0,0,0.3);
-    content: '${props => props.num}';
   }
 `;

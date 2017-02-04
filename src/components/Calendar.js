@@ -2,13 +2,16 @@ import { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import CalendarBox from './CalendarBox';
 import CalendarRow from './CalendarRow';
+import CalendarNumber from './CalendarNumber';
 
 @inject('calendar')
 @observer
 class Calendar extends Component {
   render() {
     const getDays = days => days.map((day, i) =>
-      <CalendarBox {...day} key={i}/>
+      <CalendarBox current={day.current} key={i}>
+        <CalendarNumber>{day.num}</CalendarNumber>
+      </CalendarBox>
     );
     const getWeeks = weeks => weeks.map((week, i) =>
       <CalendarRow key={i}>
