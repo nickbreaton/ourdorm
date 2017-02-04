@@ -3,12 +3,12 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: [
-    path.resolve(__dirname, 'prototypes/index.js')
-  ],
+  entry: {
+    proposal: './src/index.js'
+  },
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: './dist',
     publicPath: ''
   },
   devServer: {
@@ -17,10 +17,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.json$/,
         use: 'json-loader'
       },
@@ -28,10 +24,6 @@ module.exports = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.md$/,
-        use: 'text-loader'
       }
     ]
   },
@@ -41,7 +33,7 @@ module.exports = {
     }),
     new HtmlPlugin({
       filename: 'index.html',
-      template: 'prototypes/index.html'
+      template: 'src/index.html'
     })
   ]
 }
