@@ -3,6 +3,8 @@ import { inject, observer } from 'mobx-react';
 import CalendarBox from './CalendarBox';
 import CalendarRow from './CalendarRow';
 
+@inject('calendar')
+@observer
 class Calendar extends Component {
   render() {
     const getDays = days => days.map((day, i) =>
@@ -26,4 +28,4 @@ class Calendar extends Component {
   }
 }
 
-export default inject('calendar')(observer(Calendar));
+export default Calendar;
