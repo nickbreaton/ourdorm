@@ -2,6 +2,8 @@ import { action, computed, observable } from 'mobx';
 import { range } from 'lodash';
 import moment from 'moment';
 
+export const CALENDAR_GRID = 6 * 7;
+
 export function calendar(date) {
   return observable({
     moment: moment(date),
@@ -11,8 +13,11 @@ export function calendar(date) {
     daysBeforeThisMonth: computed(function () {
       return this.moment.startOf('month').day();
     }),
+    daysAfterThisMonth: computed(function () {
+      return CALENDAR_GRID - this.daysBeforeThisMonth - this.endDateOfThisMonth;
+    }),
     startDateOfLastMonth: computed(function () {
-      return this.endDateOfLastMonth - this.daysBeforeThisMonth;
+      return this.endDateOfLastMonth - this.daysBeforeThisMonth + 1;
     }),
     endDateOfLastMonth: computed(function () {
       return this.moment.clone().subtract(1, 'months').endOf('month').date();
@@ -21,37 +26,32 @@ export function calendar(date) {
       return this.moment.format('MMMM YYYY');
     }),
     days: computed(function () {
-      const days = [];
       let current = false;
-      // add previous month
-      days.push(...range(this.startDateOfLastMonth + 1, this.endDateOfLastMonth + 1));
-      // add current month
-      days.push(...range(1, this.endDateOfThisMonth + 1));
-      // add next month
-      days.push(...range(1, 42 - days.length + 1));
-      // map days to keep track of related month
-      return days.map(day => {
-        // flip day current at beginning of month
-        current = day === 1 ? (!current) : current;
-        // return object of information about day
-        return { num: day, current };
-      });
+      return [
+        ...range(this.startDateOfLastMonth, this.endDateOfLastMonth + 1),
+        ...range(1, this.endDateOfThisMonth + 1),
+        ...range(1, this.daysAfterThisMonth + 1)
+      ]
+        .map(day => {
+          current = day === 1 ? (!current) : current;
+          return { num: day, current };
+        });
     }),
     weeks: computed(function () {
-      const weeks = [];
-      let week = [];
-      // iterate all days
-      this.days.forEach((day) => {
-        // add day to week
+      const weeks = this.days.reduce((weeks, day) => {
+        // latest week
+        const week = weeks[weeks.length - 1];
+        // add day
         week.push(day);
-        // move to next week
+        // add new week if full
         if (week.length === 7) {
-          weeks.push(week);
-          week = [];
+          weeks.push([]);
         }
-      });
-      // return days broken into week long chunks
-      return weeks;
+        // return all weeks
+        return weeks;
+      }, [[]]);
+      // remove empty week
+      return weeks.slice(0, -1);
     }),
     forward: action.bound(function () {
       this.moment = this.moment.clone().add(1, 'month');
