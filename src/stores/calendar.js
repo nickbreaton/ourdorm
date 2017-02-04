@@ -15,7 +15,10 @@ export function calendar(date) {
       return this.endDateOfLastMonth - this.daysBeforeThisMonth;
     }),
     endDateOfLastMonth: computed(function () {
-      return moment(this.moment).subtract(1, 'months').endOf('month').date();
+      return this.moment.clone().subtract(1, 'months').endOf('month').date();
+    }),
+    timestamp: computed(function () {
+      return this.moment.format('MMMM YYYY');
     }),
     days: computed(function () {
       const days = [];
