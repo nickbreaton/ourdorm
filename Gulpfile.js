@@ -1,10 +1,16 @@
 const clean = require('gulp-clean');
-const cp = require('child_process');
+const exec = require('execa');
 const gulp = require('gulp');
 const path = require('path');
 const sftp = require('gulp-sftp');
 
 require('dotenv').config();
+
+gulp.task('default', ['server']);
+
+gulp.task('server', () => {
+  exec.sync('webpack-dev-server', ['--devtool', 'source-map'], { stdio: 'inherit'} );
+});
 
 gulp.task('clean', () => {
   return gulp.src('./dist')
@@ -12,9 +18,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', ['clean'], () => {
-  cp.spawnSync('webpack', ['-p'], {
-    stdio: ['inherit', 'inherit', 'inherit']
-  });
+  exec.sync('webpack', ['-p'], { stdio: 'inherit' });
 });
 
 gulp.task('deploy', ['build'], () => {
