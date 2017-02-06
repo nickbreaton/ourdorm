@@ -3,6 +3,8 @@ import { range } from 'lodash';
 import CalendarDay from '../lib/CalendarDay';
 import moment from 'moment';
 
+import Event from '../lib/Event';
+
 export const CALENDAR_GRID = 6 * 7;
 
 export default class Calendar {
@@ -57,7 +59,19 @@ export default class Calendar {
       // reflect number in calendar day
       date.date(num);
       // create new calendar day
-      return new CalendarDay(this, date);
+      // TEMP
+      const d = new CalendarDay(this, date);
+      if (num === 2) {
+        d.addEvent(new Event(undefined, 'Study Hall', true));
+        d.addEvent(new Event(undefined, 'Reshawn on Duty', false));
+      }
+      if (num === 3) {
+        d.addEvent(new Event(undefined, 'Maddie on Duty', false));
+      }
+      if (num === 8) {
+        d.addEvent(new Event(undefined, 'Sydney on Duty', true));
+      }
+      return d;
     });
   }
 
