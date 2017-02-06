@@ -1,4 +1,4 @@
-import { Calendar, CALENDAR_GRID } from './calendar';
+import Calendar, { CALENDAR_GRID } from './Calendar';
 
 beforeEach(function () {
   this.calendar = new Calendar('2017-02-01');

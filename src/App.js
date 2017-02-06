@@ -1,12 +1,9 @@
-// vendor
 import { Provider } from 'mobx-react';
-// components
 import Calendar from './components/Calendar';
-// stores
-import calendar from './stores/calendar';
+import stores from './stores';
 
 export default () => (
-  <Provider calendar={calendar}>
+  <Provider {...stores}>
     <div>
       <Calendar/>
     </div>

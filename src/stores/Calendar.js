@@ -1,11 +1,11 @@
 import { action, computed, observable } from 'mobx';
 import { range } from 'lodash';
-import moment from 'moment';
 import CalendarDay from '../lib/CalendarDay';
+import moment from 'moment';
 
 export const CALENDAR_GRID = 6 * 7;
 
-export class Calendar {
+export default class Calendar {
   @observable date;
   @observable start;
 
@@ -80,4 +80,4 @@ export class Calendar {
   }
 }
 
-export default new Calendar();
+export const calendar = new Calendar();
