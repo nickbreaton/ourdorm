@@ -1,7 +1,7 @@
-import { calendar, CALENDAR_GRID } from './calendar';
+import { Calendar, CALENDAR_GRID } from './calendar';
 
 beforeEach(function () {
-  this.calendar = calendar('2017-02-01');
+  this.calendar = new Calendar('2017-02-01');
 });
 
 test('end date of this month', function () {
