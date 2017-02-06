@@ -1,6 +1,7 @@
 import { action, computed, observable } from 'mobx';
 import { range } from 'lodash';
 import moment from 'moment';
+import CalendarDay from '../lib/CalendarDay';
 
 export const CALENDAR_GRID = 6 * 7;
 
@@ -38,37 +39,35 @@ export class Calendar {
   }
 
   @computed get days() {
-    let current = false;
-    return [
+    let before = true;
+    let after = false;
+    let nums = [
       ...range(this.startDateOfLastMonth, this.endDateOfLastMonth + 1),
       ...range(1, this.endDateOfThisMonth + 1),
       ...range(1, this.daysAfterThisMonth + 1)
-    ]
-      .map(day => {
-        current = day === 1 ? (!current) : current;
-        return { num: day, current };
-      });
+    ];
+    return nums.map((num) => {
+      const date = this.date.clone();
+      // watch for month change
+      if (!before && num === 1) after = true;
+      if (before && num === 1) before = false;
+      // reflect month change
+      if (before) date.subtract(1, 'month');
+      if (after) date.add(1, 'month');
+      // reflect number in calendar day
+      date.date(num);
+      // create new calendar day
+      return new CalendarDay(this, date);
+    });
   }
 
   @computed get weeks() {
-    const weeks = this.days.reduce((weeks, day) => {
-      // latest week
-      const week = weeks[weeks.length - 1];
-      // add day
-      week.push(day);
-      // add new week if full
-      if (week.length === 7) {
-        weeks.push([]);
-      }
-      // return all weeks
-      return weeks;
-    }, [[]]);
-    // remove empty week
-    return weeks.slice(0, -1);
+    return range(0, CALENDAR_GRID / 7).map((i) => {
+      return this.days.slice(i * 7, (i * 7) + 7);
+    });
   }
 
   @action.bound reset() {
-    console.log('test');
     this.date = moment(this.start);
   }
 
