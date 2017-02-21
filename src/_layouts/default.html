@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      OurDorm
+      {% if page.title %}
+        | {{ page.title }}
+      {% endif %}
+    </title>
+    {% assign resource = page.path | remove: '.html' %}
+    <link rel="stylesheet" href="/styles/{{ page.layout }}.css" />
+    <link rel="stylesheet" href="/styles/{{ resource }}.css" />
+  </head>
+  <body>
+    {% include header.html %}
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>
