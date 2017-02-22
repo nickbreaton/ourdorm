@@ -1,1 +1,11 @@
-<h2>Header 2</h2>
+<nav>
+  {% for page in site.pages %}
+    {% if page.title %}
+      <li id="{{ page.title | downcase }}">
+        <a href="{{ page.url | remove: '.html' }}">
+          {{ page.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</nav>
