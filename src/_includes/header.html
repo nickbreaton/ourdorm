@@ -1,13 +1,17 @@
 <header>
   <nav>
-    {% for page in site.pages %}
-      {% if page.title %}
-        <li id="{{ page.title | downcase }}">
-          <a href="{{ page.url | remove: '.html' }}">
-            {{ page.title }}
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
+    <div class="center">
+      <ul>
+        {% for p in site.pages %}
+          {% if p.title %}
+            <li id="nav-{{ p.title | downcase }}">
+              <a href="{{ p.url | remove: '.html' }}" class="{% if page.url == p.url %} active {% endif %}">
+                {{ p.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
   </nav>
 </header>

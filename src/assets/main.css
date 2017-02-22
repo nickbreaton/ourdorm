@@ -1,0 +1,112 @@
+/* SITE */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  flex-grow: 10;
+}
+
+.center {
+  margin: auto;
+  width: 800px;
+}
+
+/* HEADER */
+
+header {
+  padding: 1.5em 0;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+header li {
+  list-style: none;
+}
+
+header a {
+  color: #676767;
+  text-decoration: none;
+  font-size: 1.05em;
+  font-weight: bold;
+  margin-right: 1em;
+  padding: 0.35em 0;
+  display: inline-block;
+  border-bottom: 0.175em solid rgba(0,0,0,0);
+}
+
+header a.active,
+header a:hover {
+  color: #16a085;
+}
+
+header a:hover {
+  border-bottom-color: currentColor;
+}
+
+#nav-join {
+  order: 1000;
+  flex-grow: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nav-join a {
+  margin: 0;
+  background-color: #16a085;
+  color: white;
+  border-bottom: none !important;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border-radius: 0.25em;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 1.5em 0;
+  color: #676767;
+}
+
+footer a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* INDEX */
+
+
+
+/* JOIN */
+
+
+
+/* PRICING */
+
+
+
+/* PRODUCT */
+
+
+
+/**/

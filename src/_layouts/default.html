@@ -4,15 +4,16 @@
     <title>
       OurDorm {% if page.title %} | {{ page.title }} {% endif %}
     </title>
-    <link rel="stylesheet" href="/styles/{{ page.layout }}.css" />
-    <link rel="stylesheet" href="/styles/{{ page.path | remove: '.html' }}.css" />
-    <link rel="stylesheet" href="/styles/header.css" />
-    <link rel="stylesheet" href="/styles/footer.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="/assets/main.css" />
   </head>
   <body>
     {% include header.html %}
     <main>
-      {{ content }}
+      <div class="center">
+        {{ content }}
+      </div>
     </main>
     {% include footer.html %}
   </body>
