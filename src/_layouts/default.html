@@ -2,19 +2,18 @@
 <html>
   <head>
     <title>
-      OurDorm
-      {% if page.title %}
-        | {{ page.title }}
-      {% endif %}
+      OurDorm {% if page.title %} | {{ page.title }} {% endif %}
     </title>
-    {% assign resource = page.path | remove: '.html' %}
     <link rel="stylesheet" href="/styles/{{ page.layout }}.css" />
-    <link rel="stylesheet" href="/styles/{{ resource }}.css" />
+    <link rel="stylesheet" href="/styles/{{ page.path | remove: '.html' }}.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
   </head>
   <body>
     {% include header.html %}
     <main>
       {{ content }}
     </main>
+    {% include footer.html %}
   </body>
 </html>

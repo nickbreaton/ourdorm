@@ -9,3 +9,4 @@ defaults:
       layout: default
 sass:
   style: expanded
+  sass_dir: styles/_lib
