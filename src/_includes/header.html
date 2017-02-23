@@ -6,8 +6,8 @@
           {% if p.title %}
             <li id="nav-{{ p.title | downcase }}">
               {% capture href %}{{ site.baseurl }}{{ p.url }}{% endcapture %}
-              {% capture class %}{% if page.url == p.url %} active {% endif %}{% endcapture %}
-              <a href="{{ href }}" class="{{ class }}">
+              {% capture class %}{% if page.url == p.url %} class="active" {% endif %}{% endcapture %}
+              <a href="{{ href }}" {{ class }}>
                 {{ p.title }}
               </a>
             </li>

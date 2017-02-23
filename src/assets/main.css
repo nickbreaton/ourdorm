@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background: rgba(22, 160, 133, 0.25);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -27,6 +31,7 @@ main {
 
 header {
   padding: 1.5em 0;
+  user-select: none;
 }
 
 header ul {
@@ -97,7 +102,44 @@ footer a:hover {
 
 /* INDEX */
 
+.home {
+  text-align: center;
+  user-select: none;
+}
 
+.title {
+  font-size: 4em;
+  text-align: center;
+  margin: 0.5em;
+  cursor: default;
+}
+
+.title-start {
+  font-weight: bold;
+  color: #16a085;
+}
+
+.moto {
+  text-align: center;
+  margin-bottom: 5em;
+  display: inline-block;
+  max-width: 50ch;
+  color: #676767;
+  font-size: 1.15em;
+  user-select: initial;
+}
+
+#call-to-action {
+  background: #16a085;
+  border: none;
+  color: #fff;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: bold;
+  border-radius: 0.5em;
+  margin: auto;
+  text-decoration: none;
+}
 
 /* JOIN */
 
