@@ -29,7 +29,23 @@ header {
   padding: 1.5em 0;
 }
 
+header .center {
+  display: flex;
+}
+
+#logo {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
+#logo img {
+  height: 2.1em;
+}
+
 header ul {
+  flex-basis: 100%;
   display: flex;
   justify-content: flex-start;
 }
@@ -38,7 +54,7 @@ header li {
   list-style: none;
 }
 
-header a {
+header .link {
   color: #676767;
   text-decoration: none;
   font-size: 1.05em;
@@ -49,12 +65,12 @@ header a {
   border-bottom: 0.175em solid rgba(0,0,0,0);
 }
 
-header a.active,
-header a:hover {
+header .link.active,
+header .link:hover {
   color: #16a085;
 }
 
-header a:hover {
+header .link:hover {
   border-bottom-color: currentColor;
 }
 
@@ -65,7 +81,7 @@ header a:hover {
   justify-content: flex-end;
 }
 
-#nav-join a {
+#nav-join .link {
   margin: 0;
   background-color: #16a085;
   color: white;

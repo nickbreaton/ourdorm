@@ -2,13 +2,16 @@
   <nav>
     <div class="center">
       <!-- internal navigation links -->
+      <a id="logo" href="{{ site.baseurl }}/">
+        <img alt="OurDorm logo" src="{{ site.baseurl }}/assets/logo.svg"/>
+      </a>
       <ul>
         {% for p in site.pages %}
           {% if p.title %}
             <li id="nav-{{ p.title | downcase }}">
               {% capture href %}{{ site.baseurl }}{{ p.url }}{% endcapture %}
-              {% capture class %}{% if page.url == p.url %} class="active" {% endif %}{% endcapture %}
-              <a href="{{ href }}" {{ class }}>
+              {% capture class %}{% if page.url == p.url %}active{% endif %}{% endcapture %}
+              <a class="link {{ class }}" href="{{ href }}">
                 {{ p.title }}
               </a>
             </li>
