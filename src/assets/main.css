@@ -31,7 +31,7 @@ main {
 
 header {
   padding: 1.5em 0;
-  user-select: none;
+  -webkit-user-select: none;
 }
 
 header ul {
@@ -87,7 +87,7 @@ footer {
   padding: 1.5em 0;
   color: #676767;
   cursor: default;
-  user-select: none;
+  -webkit-user-select: none;
 }
 
 footer a {
@@ -104,7 +104,7 @@ footer a:hover {
 
 .home {
   text-align: center;
-  user-select: none;
+  -webkit-user-select: none;
 }
 
 .title {
@@ -126,7 +126,7 @@ footer a:hover {
   max-width: 50ch;
   color: #676767;
   font-size: 1.15em;
-  user-select: initial;
+  -webkit-user-select: initial;
 }
 
 #call-to-action {
