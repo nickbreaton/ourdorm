@@ -5,7 +5,9 @@
         {% for p in site.pages %}
           {% if p.title %}
             <li id="nav-{{ p.title | downcase }}">
-              <a href="{{ p.url | remove: '.html' }}" class="{% if page.url == p.url %} active {% endif %}">
+              {% capture href %}{{ site.baseurl }}{{ p.url }}{% endcapture %}
+              {% capture class %}{% if page.url == p.url %} active {% endif %}{% endcapture %}
+              <a href="{{ href }}" class="{{ class }}">
                 {{ p.title }}
               </a>
             </li>
