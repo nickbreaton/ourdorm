@@ -74,11 +74,14 @@ header .link:hover {
   border-bottom-color: currentColor;
 }
 
+#nav-login {
+    justify-content: flex-end;
+    display: flex;
+    flex-grow: 1000;
+}
+
 #nav-join {
-  order: 1000;
-  flex-grow: 1000;
   display: flex;
-  justify-content: flex-end;
 }
 
 #nav-join .link {
@@ -148,6 +151,10 @@ footer a:hover {
   margin: auto;
   text-decoration: none;
 }
+
+/* LOGIN */
+
+
 
 /* JOIN */
 

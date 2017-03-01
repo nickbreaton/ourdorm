@@ -6,16 +6,18 @@
         <img alt="OurDorm logo" src="{{ site.baseurl }}/assets/logo.svg"/>
       </a>
       <ul>
-        {% for p in site.pages %}
-          {% if p.title %}
-            <li id="nav-{{ p.title | downcase }}">
-              {% capture href %}{{ site.baseurl }}{{ p.url }}{% endcapture %}
-              {% capture class %}{% if page.url == p.url %}active{% endif %}{% endcapture %}
-              <a class="link {{ class }}" href="{{ href }}">
-                {{ p.title }}
-              </a>
-            </li>
-          {% endif %}
+        {% for i in (0...5) %}
+          {% for p in site.pages %}
+            {% if p.order == i %}
+              <li id="nav-{{ p.title | downcase }}">
+                {% capture href %}{{ site.baseurl }}{{ p.url }}{% endcapture %}
+                {% capture class %}{% if page.url == p.url %}active{% endif %}{% endcapture %}
+                <a class="link {{ class }}" href="{{ href }}">
+                  {{ p.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       </ul>
     </div>
