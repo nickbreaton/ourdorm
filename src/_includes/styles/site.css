@@ -32,7 +32,7 @@ input.text {
   font-size: 1em;
   color: {{ site.accent }};
   outline: none;
-  border-width: 0.175em;
+  border-width: 0.2em;
   border-color: #d2d2d2;
   border-style: solid;
   letter-spacing: 0.05em;
@@ -62,20 +62,23 @@ input[type="checkbox"] {
 input[type="checkbox"] + label {
   cursor: pointer;
   color: {{ site.accent }};
+  margin-left: -1em;
 }
 
 input[type="checkbox"] + label::before {
   content: ' ';
   display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
-  border-width: 0.25em;
+  width: 1.1em;
+  height: 1.1em;
+  border-width: 0.2em;
   border-color: #d2d2d2;
   border-style: solid;
   border-radius: 0.25em;
   background-color: rgba(0,0,0,0.025);
   background: white;
-  left: -1em;}
+  left: -1em;
+  transform: translateY(0.4em) translateX(-0.85em);
+}
 
 input[type="checkbox"]:active + label::before {
   border-color: {{ site.color }};
