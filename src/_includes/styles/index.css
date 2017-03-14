@@ -1,0 +1,38 @@
+/* INDEX */
+
+.home {
+  text-align: center;
+}
+
+.title {
+  font-size: 4em;
+  text-align: center;
+  margin: 0.5em;
+  cursor: default;
+}
+
+.title-start {
+  font-weight: bold;
+  color: {{ site.color }};
+}
+
+.moto {
+  text-align: center;
+  margin-bottom: 5em;
+  display: inline-block;
+  max-width: 50ch;
+  color: {{ site.accent }};
+  font-size: 1.15em;
+}
+
+#call-to-action {
+  background: {{ site.color }};
+  border: none;
+  color: #fff;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: bold;
+  border-radius: 0.5em;
+  margin: auto;
+  text-decoration: none;
+}
