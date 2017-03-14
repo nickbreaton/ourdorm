@@ -1,9 +1,14 @@
+---
+layout: none
+---
+
 /* SITE */
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -11,7 +16,6 @@ body {
   flex-direction: column;
   justify-content: space-around;
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -21,6 +25,105 @@ main {
 .center {
   margin: auto;
   width: 800px;
+}
+
+input {
+  padding: 0.85em 1em;
+  border-radius: 0.25em;
+}
+
+input.text {
+  font-size: 1em;
+  color: {{ site.accent }};
+  outline: none;
+  border-width: 0.175em;
+  border-color: #d2d2d2;
+  border-style: solid;
+  letter-spacing: 0.05em;
+  background-color: rgba(0,0,0,0.025)
+}
+
+input.text:focus {
+  border-color: {{ site.color }};
+}
+
+input[type="submit"] {
+  border: none;
+  background: {{ site.color }};
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+input[type="submit"]:active {
+  opacity: 0.75;
+}
+
+input[type="checkbox"] {
+  outline: none;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  color: {{ site.accent }};
+}
+
+input[type="checkbox"] + label::before {
+  content: ' ';
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  border-width: 0.25em;
+  border-color: #d2d2d2;
+  border-style: solid;
+  border-radius: 0.25em;
+  background-color: rgba(0,0,0,0.025);
+  background: white;
+  left: -1em;}
+
+input[type="checkbox"]:active + label::before {
+  border-color: {{ site.color }};
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-color: {{ site.color }};
+  border-color: {{ site.color }};
+  background-image: url('{{ site.baseurl }}/assets/check.svg');
+  background-size: 65%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+form input {
+  margin-bottom: 1em;
+}
+
+form label {
+  text-align: center;
+  padding-left: 0.45em;
+}
+
+form fieldset {
+  border: none;
+  text-align: center;
+  margin-bottom: 0.75em;
+  position: relative;
+}
+
+form a {
+  color: {{ site.color }};
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
 }
 
 /* HEADER */
@@ -55,7 +158,7 @@ header li {
 }
 
 header .link {
-  color: #676767;
+  color: {{ site.accent }};
   text-decoration: none;
   font-size: 1.05em;
   font-weight: bold;
@@ -67,7 +170,7 @@ header .link {
 
 header .link.active,
 header .link:hover {
-  color: #16a085;
+  color: {{ site.color }};
 }
 
 header .link:hover {
@@ -75,9 +178,9 @@ header .link:hover {
 }
 
 #nav-login {
-    justify-content: flex-end;
-    display: flex;
-    flex-grow: 1000;
+  justify-content: flex-end;
+  display: flex;
+  flex-grow: 1000;
 }
 
 #nav-join {
@@ -86,7 +189,7 @@ header .link:hover {
 
 #nav-join .link {
   margin: 0;
-  background-color: #16a085;
+  background-color: {{ site.color }};
   color: white;
   border-bottom: none !important;
   padding-left: 1.5em;
@@ -99,7 +202,7 @@ header .link:hover {
 footer {
   text-align: center;
   padding: 1.5em 0;
-  color: #676767;
+  color: {{ site.accent }};
   cursor: default;
 }
 
@@ -128,7 +231,7 @@ footer a:hover {
 
 .title-start {
   font-weight: bold;
-  color: #16a085;
+  color: {{ site.color }};
 }
 
 .moto {
@@ -136,12 +239,12 @@ footer a:hover {
   margin-bottom: 5em;
   display: inline-block;
   max-width: 50ch;
-  color: #676767;
+  color: {{ site.accent }};
   font-size: 1.15em;
 }
 
 #call-to-action {
-  background: #16a085;
+  background: {{ site.color }};
   border: none;
   color: #fff;
   padding: 1em;

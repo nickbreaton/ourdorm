@@ -3,9 +3,20 @@ title: Join
 order: 4
 ---
 <div class="center">
-  <form>
-    <input id="username" type="text" placeholder="Username"/>
-    <input id="password" type="password" placeholder="Password"/>
-    <input id="password_confirmation" type="password" placeholder="Confirm Password"/>
+  <form id="join" action="#">
+    <input class="text" type="text" placeholder="Full Name" autofocus />
+    <input class="text" type="email" placeholder="Email" />
+    <input class="text" type="password" placeholder="Password" />
+    <input class="text" type="password" placeholder="Confirm Password" />
+    <fieldset>
+      <input id="agree_to_terms" type="checkbox" required >
+        
+      </input>
+
+      <label for="agree_to_terms">
+        I agree to the <a href="#">terms and conditions</a>.
+      </label>
+    </fieldset>
+    <input type="submit" value="Create Account"/>
   </form>
 </div>

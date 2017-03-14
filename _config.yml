@@ -1,6 +1,8 @@
 source: src
 destination: dist
 repository: nickbreaton/ourdorm
+color: '#16a085'
+accent: '#676767'
 defaults:
   -
     scope:
