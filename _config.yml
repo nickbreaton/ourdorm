@@ -3,12 +3,6 @@ destination: dist
 repository: nickbreaton/ourdorm
 color: '#16a085'
 accent: '#676767'
-defaults:
-  -
-    scope:
-      path: ''
-    values:
-      layout: default
 sass:
   style: expanded
   sass_dir: styles/_lib
