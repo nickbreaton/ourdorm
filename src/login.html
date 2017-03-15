@@ -3,7 +3,13 @@ title: Login
 order: 3
 ---
 <div class="center">
-  <form>
-
+  <form id="login" action="#">
+    <input class="text" type="email" placeholder="Email" autofocus required/>
+    <input class="text" type="password" placeholder="Password" required/>
+    <fieldset>
+      <input id="remember_me" type="checkbox"/>
+      <label for="remember_me">Keep me logged in.</label>
+    </fieldset>
+    <input type="submit" value="Log In"/>
   </form>
 </div>
