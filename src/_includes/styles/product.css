@@ -1,8 +1,28 @@
 /* PRODUCT */
 
+#product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  width: 3em;
+  height: 25em;
+  background: url({{ site.baseurl }}/assets/images/next.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.arrow.left {
+  transform: rotate(180deg);
+}
+
 .browser {
-  width: 700px;
-  height: 400px;
+  width: 40em;
+  height: 25em;
   border: 0.1em solid #81CCBD;
   border-radius: 0.5em;
   margin: auto;
@@ -31,7 +51,7 @@
   width: 0.75em;
   height: 0.75em;
   border: 0.1em solid;
-  border-radius: 10em;
+  border-radius: 0.75em;
 }
 
 .browser .button.close {
@@ -62,4 +82,24 @@
 .browser .tmp {
   width: 3em;
   margin-right: 0.75em;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.slider .bullet {
+  cursor: pointer;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.1em solid #81CCBD;
+  border-radius: 10em;
+  margin: 0 0.25em;
+  background: #DCF1ED;
+}
+
+.slider .bullet.active {
+  background: #81CCBD;
 }
