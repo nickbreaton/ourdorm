@@ -16,6 +16,10 @@ var page = 0;
 var total = $('.browser').length;
 var timeout;
 
+// start on current page
+$('.browser').css('left', '-150%');
+$('.browser').eq(page).css('left', '0');
+
 // create bullets
 for (var i = 0; i < total; i++) {
   $('.slider').append('<div class="bullet"></div>');
