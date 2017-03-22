@@ -14,6 +14,7 @@ $('form').submit(function (event) {
 
 var page = 0;
 var total = $('.browser').length;
+var timeout;
 
 // create bullets
 for (var i = 0; i < total; i++) {
@@ -23,10 +24,10 @@ for (var i = 0; i < total; i++) {
 // activate current bullet
 $('.slider .bullet').eq(page).addClass('active');
 
-// initialize browser locations
-$('.browser').css('left', '-150%');
-$('.browser').eq(page).css('left', '0');
+// start slider change timeout
+automateSlider();
 
+// list for arrow click events
 $('.arrow').click(function (event) {
   var className = event.target.className;
   var direction = (className.indexOf('right') > -1) ? 1 : -1;
@@ -52,4 +53,15 @@ function updateSlider(direction) {
   $('.browser').eq(page).css('left', direction * -1 * 150 + '%');
   $('.browser').eq(page).animate({ left: '0' }, 500);
   $('.browser').eq(previous).animate({ left: direction * 150 + '%' }, 500);
+  // clear previous timeout, set new timeout
+  if (timeout) {
+    clearTimeout(timeout);
+    automateSlider();
+  }
+}
+
+function automateSlider() {
+  timeout = setTimeout(function () {
+    updateSlider(1);
+  }, 10000);
 }
