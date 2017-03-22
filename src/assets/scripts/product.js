@@ -57,7 +57,7 @@ $('#product').ready(function () {
     // set page to specified number
     page = number;
     // update DOM
-    update(1);
+    update(-1);
   }
 
   function update(direction) {
@@ -75,9 +75,9 @@ $('#product').ready(function () {
       $(bullet)[action]('active');
     });
     // animate browser frames
-    $('.browser').eq(page).css('left', direction * -1 * 150 + '%');
+    $('.browser').eq(page).css('left', direction * 150 + '%');
     $('.browser').eq(page).animate({ left: '0' }, 500);
-    $('.browser').eq(previous).animate({ left: direction * 150 + '%' }, 500);
+    $('.browser').eq(previous).animate({ left: direction * -150 + '%' }, 500);
     // clear previous timeout, set new timeout
     if (timeout) {
       clearTimeout(timeout);
