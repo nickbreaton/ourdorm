@@ -10,8 +10,9 @@ $('form').submit(function (event) {
 });
 
 // PRODUCT
-$(function product() {
+$('#product').ready(function () {
   var page = 0;
+  var previous = page;
   var total = $('.browser').length;
   var timeout;
 
@@ -50,29 +51,33 @@ $(function product() {
     to(index);
   });
 
+  // change slide after 10 seconds
+  function automate() {
+    timeout = setTimeout(function () {
+      next(1);
+    }, 10000);
+  }
+
   function next(direction) {
-    // do not update if already updating
-    if ($('.browser').is(':animated')) return;
-    // save previous index
-    var previous = page;
     // update current page index
     page += direction;
     // update DOM
-    update(previous, direction);
+    update(direction);
   }
 
   function to(number) {
-    // do not update if already updating
-    if ($('.browser').is(':animated')) return;
-    // save previous index
-    var previous = page;
     // set page to specified number
     page = number;
     // update DOM
-    update(previous, 1);
+    update(1);
   }
 
-  function update(previous, direction) {
+  function update(direction) {
+    // do not update if already updating
+    if ($('.browser').is(':animated')) {
+      page = previous;
+      return;
+    }
     // contain index in bounds
     page = (page > total - 1) ? 0 : page;
     page = (page < 0) ? total - 1 : page;
@@ -90,11 +95,7 @@ $(function product() {
       clearTimeout(timeout);
       automate();
     }
-  }
-
-  function automate() {
-    timeout = setTimeout(function () {
-      next(1);
-    }, 10000);
+    // save current page as previous for next change
+    previous = page;
   }
 });
