@@ -39,7 +39,7 @@ $('#product').ready(function () {
   });
 
   // determine which page to jump to
-  $('.slider .bullet').click(function () {
+  $('.slider .bullet').mouseover(function () {
     var node = this;
     var index = -1;
     $('.slider .bullet').each(function (i, bullet) {
