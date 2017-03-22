@@ -10,7 +10,22 @@ $('form').submit(function (event) {
   event.target.reset();
 });
 
+// PRODUCT
+
 var page = 0;
+var total = $('.browser').length;
+
+// create bullets
+for (var i = 0; i < total; i++) {
+  $('.slider').append('<div class="bullet"></div>');
+}
+
+// activate current bullet
+$('.slider .bullet').eq(page).addClass('active');
+
+// initialize browser locations
+$('.browser').css('left', '-150%');
+$('.browser').eq(page).css('left', '0');
 
 $('.arrow').click(function (event) {
   var className = event.target.className;
@@ -19,16 +34,22 @@ $('.arrow').click(function (event) {
 });
 
 function updateSlider(direction) {
+  // do not update if already updating
+  if ($('.browser').is(':animated')) return;
+  // save previous index
+  var previous = page;
   // update current page index
   page += direction;
   // contain index in bounds
-  page = (page > 2) ? 0 : page;
-  page = (page < 0) ? 2 : page;
+  page = (page > total - 1) ? 0 : page;
+  page = (page < 0) ? total - 1 : page;
   // change class on bullet
   $('.slider .bullet').each(function (i, bullet) {
     var action = (page === i) ? 'addClass' : 'removeClass';
     $(bullet)[action]('active');
   });
-  // tmp
-  $('.browser').toggleClass('active');
+  // animate browser frames
+  $('.browser').eq(page).css('left', direction * -1 * 150 + '%');
+  $('.browser').eq(page).animate({ left: '0' }, 500);
+  $('.browser').eq(previous).animate({ left: direction * 150 + '%' }, 500);
 }
