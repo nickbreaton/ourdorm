@@ -100,6 +100,10 @@
   margin-right: 0.75em;
 }
 
+.browser .page {
+  width: 100%;
+}
+
 .slider {
   display: flex;
   justify-content: center;
