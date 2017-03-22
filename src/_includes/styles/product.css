@@ -5,12 +5,14 @@
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  height: 29em;
+  margin-top: 1em;
 }
 
 .arrow {
   cursor: pointer;
   width: 3em;
-  height: 28em;
+  height: 29em;
   background: url({{ site.baseurl }}/assets/images/next.svg),
               linear-gradient(to right, rgba(255,255,255,0), white);
   background-size: contain;
@@ -38,8 +40,15 @@
   height: 100%;
   border: 0.1em solid #81CCBD;
   border-radius: 0.5em;
-  overflow: hidden;
   z-index: -1;
+}
+
+.browser .no-overflow {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .browser:nth-child(1) {
@@ -104,10 +113,16 @@
   width: 100%;
 }
 
+.browsers figcaption {
+  margin: 1em 0;
+  text-align: center;
+  color: {{ site.accent }};
+}
+
 .slider {
   display: flex;
   justify-content: center;
-  margin-top: 1em;
+  margin: 1em 0;
 }
 
 .slider .bullet {

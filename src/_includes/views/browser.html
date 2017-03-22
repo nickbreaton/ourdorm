@@ -1,14 +1,19 @@
-<div class="browser">
-  <div class="navigation">
-    <div class="buttons">
-      <div class="button close"></div>
-      <div class="button min"></div>
-      <div class="button max"></div>
+<figure class="browser">
+  <div class="no-overflow">
+    <div class="navigation">
+      <div class="buttons">
+        <div class="button close"></div>
+        <div class="button min"></div>
+        <div class="button max"></div>
+      </div>
+      <div class="location">
+        ourdorm.uncc.edu
+      </div>
+      <div class="tmp"></div>
     </div>
-    <div class="location">
-      ourdorm.uncc.edu
-    </div>
-    <div class="tmp"></div>
+    <img class="page" src="{{ include.src }}" alt="{{ include.alt }}"/>
   </div>
-  <img class="page" src="{{ include.src }}" alt="{{ include.alt }}"/>
-</div>
+  <figcaption>
+    {{ include.caption }}
+  </figcaption>
+</figure>
