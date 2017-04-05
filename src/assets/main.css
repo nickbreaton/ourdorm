@@ -1,10 +1,10 @@
 ---
 ---
-{% include styles/site.css %}
 {% include styles/footer.css %}
 {% include styles/header.css %}
 {% include styles/index.css %}
-{% include styles/login.css %}
 {% include styles/join.css %}
+{% include styles/login.css %}
 {% include styles/pricing.css %}
 {% include styles/product.css %}
+{% include styles/site.css %}

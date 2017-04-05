@@ -1,1 +1,20 @@
 /* LOGIN */
+#user {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#user-image {
+  border-radius: 100%;
+  border: 0.25em solid {{ site.color }};
+  margin: 2em auto;
+}
+
+#user-name {
+  margin-bottom: 0.25em;
+  display: inline-block;
+  text-transform: capitalize;
+}

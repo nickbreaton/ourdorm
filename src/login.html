@@ -2,13 +2,13 @@
 layout: default
 title: Login
 order: 3
-script: form.js
+script: login.js
 ---
 <div class="center">
-  <form id="login" action="#">
+  <form id="login" class="hidden" action="#">
     <!-- input fields -->
-    <input class="text" type="email" placeholder="Email" autofocus required/>
-    <input class="text" type="password" placeholder="Password" required/>
+    <input class="text" type="email" name="email" placeholder="Email" autofocus required/>
+    <input class="text" type="password" name="password" placeholder="Password" required/>
     <!-- keep user signed in -->
     <fieldset>
       <input id="remember_me" type="checkbox"/>
@@ -16,7 +16,21 @@ script: form.js
     </fieldset>
     <!-- submit button -->
     <input type="submit" value="Log In"/>
-    <!-- alert message -->
-    <input type="hidden" name="alert" value="Successfully logged in."/>
   </form>
+  <div id="user" class="hidden">
+
+    <img
+      id="user-image"
+      width="200"
+      height="200"
+      alt="profile picture"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/PICA.jpg/480px-PICA.jpg"
+    />
+    <h1>
+      <span id="user-name"></span>
+    </h1>
+    <form id="logout">
+      <input type="submit" value="Logout"/>
+    </form>
+  </div>
 </div>

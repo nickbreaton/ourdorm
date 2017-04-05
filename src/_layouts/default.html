@@ -17,9 +17,13 @@
     </main>
     {% include views/footer.html %}
     {% if page.script %}
-      <!-- include jQuery -->
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <!-- include jQuery and plugins -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <!-- include md5 hash for gravatar -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.7.0/js/md5.min.js"></script>
       <!-- include relevant JavaScript -->
+      <script src="{{ site.baseurl }}/assets/scripts/lib.js"></script>
       <script src="{{ site.baseurl }}/assets/scripts/{{ page.script }}"></script>
     {% endif %}
   </body>
