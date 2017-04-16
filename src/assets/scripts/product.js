@@ -57,7 +57,7 @@ $('#product').ready(function () {
     // set page to specified number
     page = number;
     // update DOM
-    update(-1);
+    update(1);
   }
 
   function update(direction) {

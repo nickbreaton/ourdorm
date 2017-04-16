@@ -8,30 +8,39 @@ script: product.js
   <div id="product">
     <div class="arrow left"></div>
     <div class="browsers">
+
+      {% capture src %}{{ site.baseurl }}/assets/screenshots/Event.png{% endcapture %}
       {%
         include views/browser.html
-          src="https://i.imgur.com/TxcoPUK.png"
-          alt="DuckDuckGo"
-          caption="DuckDuckGo is a search engine that doesn't track you."
+        src=src
+        alt="Create Events"
+        caption="Create events to stay organized."
       %}
+
+      {% capture src %}{{ site.baseurl }}/assets/screenshots/Invite.png{% endcapture %}
       {%
         include views/browser.html
-          src="https://i.imgur.com/IC7WgMg.png"
-          alt="Google"
-          caption="Google is the most popular search engine in the world."
+          src=src
+          alt="Invite Co-RAs"
+          caption="Invite co-RAs to organize together."
       %}
+
+      {% capture src %}{{ site.baseurl }}/assets/screenshots/Reminder.png{% endcapture %}
       {%
         include views/browser.html
-          src="https://i.imgur.com/r84SzAc.png"
-          alt="Ecosia"
-          caption="Ecosia is a search engine that plants trees with its ad revenue."
+          src=src
+          alt="Setup Reminders"
+          caption="Setup SMS reminders to never miss duty."
       %}
+
+      {% capture src %}{{ site.baseurl }}/assets/screenshots/Calendar.png{% endcapture %}
       {%
         include views/browser.html
-          src="https://i.imgur.com/bmtnsm3.png"
-          alt="Bing"
-          caption="Bing is the search engine powered by Microsoft."
+          src=src
+          alt="Calendar"
+          caption="Keep track of upcoming duty nights and events on the calendar."
       %}
+
     </div>
     <div class="arrow right"></div>
   </div>
