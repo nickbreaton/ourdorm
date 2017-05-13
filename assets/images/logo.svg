@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="114px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <defs>
+        <circle id="path-1" cx="50" cy="50" r="50"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(7.000000, 7.000000)">
+            <circle id="Oval" stroke="#16a085" stroke-width="12.5" cx="50" cy="50" r="50"></circle>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask"></g>
+            <polygon id="Rectangle-Copy" fill="#16a085" mask="url(#mask-2)" points="14.9669914 85.6776695 85.6776695 14.9669914 121.033009 50.3223305 50.3223305 121.033009"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      OurDorm  | Join 
+    </title>
+    <!-- add google font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="/ourdorm/assets/main.css">
+    <!-- add favicon -->
+    <link rel="icon" href="/ourdorm/assets/images/logo.png">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="center">
+          <!-- internal navigation links -->
+          <a id="logo" href="/ourdorm/">
+            <img alt="OurDorm logo" src="/ourdorm/assets/images/logo.svg"/>
+          </a>
+          <ul>
+            <li id="nav-home">
+              <a class="link " href="/ourdorm/">
+                Home
+                </a>
+            </li>
+            <li id="nav-pricing">
+              <a class="link " href="/ourdorm/pricing.html">
+                Pricing
+                </a>
+            </li>
+            <li id="nav-product">
+              <a class="link " href="/ourdorm/product.html">
+                Product
+                </a>
+            </li>
+            <li id="nav-login">
+              <a class="link " href="/ourdorm/login.html">
+                Login
+                </a>
+            </li>
+            <li id="nav-join">
+              <a class="link active" href="/ourdorm/join.html">
+                Join
+                </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="center">
+        <form id="join" action="#">
+          <!-- input fields -->
+          <input class="text" type="text" name="name" placeholder="Full Name" autofocus required/>
+          <input class="text" type="email" name="email" placeholder="Email" required/>
+          <input class="text" type="password" name="password" placeholder="Password" required/>
+          <input class="text" type="password" name="confirm" placeholder="Confirm Password" required/>
+          <!-- agree to the terms -->
+          <fieldset>
+            <input id="agree_to_terms" type="checkbox" required/>
+            <label for="agree_to_terms">
+              I agree to the <a href="#">terms and conditions</a>.
+      </label>
+          </fieldset>
+          <!-- submit button -->
+          <input type="submit" value="Create an Account"/>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="center">
+        <!-- external navigation links -->
+        <div>
+          <!-- valdation links -->
+          <a href="https://validator.w3.org/check?uri=referer" target="_blank">Validate HTML</a>
+          <span>&bull;</span>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">Validate CSS</a>
+          <span>&bull;</span>
+          <!-- link to GitHub repository -->
+          <a href="https://github.com/nickbreaton/ourdorm" target="_blank">GitHub</a>
+        </div>
+        <div>
+          <span>Nick Breaton &copy; 2017</span>
+        </div>
+      </div>
+    </footer>
+    <!-- include jQuery and plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- include md5 hash for gravatar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.7.0/js/md5.min.js"></script>
+    <!-- include relevant JavaScript -->
+    <script src="/ourdorm/assets/scripts/lib.js"></script>
+    <script src="/ourdorm/assets/scripts/join.js"></script>
+  </body>
+</html>
